@@ -1,0 +1,40 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Payment Success</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="w-full h-full flex flex-col items-center justify-center">
+    <h1>Token:</h1>
+    <div id="decodedToken" class="w-50 text-center text-black" style="word-wrap: break-word;"></div>
+  </div>
+
+  <div class="flex items-center justify-center min-h-screen bg-green-50">
+    <h1 class="text-2xl font-bold text-green-700">✅ Payment Successful!</h1>
+  </div>
+
+
+  <script>
+    // Function to get the 'token' from the URL parameters
+    function getTokenFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('token');
+    }
+
+    function decodeToken(token){
+      const arrayToken = token.split('.');
+      
+    }
+
+    // Get the token from URL
+    const token = getTokenFromURL();
+    console.log(token);
+    document.getElementById('decodedToken').textContent = token;
+  </script>
+</body>
+
+</html>
